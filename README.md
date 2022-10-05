@@ -1,6 +1,8 @@
 # MSFX
 [![Discord](https://img.shields.io/discord/758913736941109278?label=Discord)](https://discord.gg/mmDnwJXUYz)
 
+**Please be aware that the code for the theme is utter garbage and that a rewrite will come soon!**
+
 A Internet Explorer 5 theme for Mozilla Firefox.
 
 #### Join a discord server about Classic Theme!
