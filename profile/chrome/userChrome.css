@@ -40,6 +40,7 @@
 --hide-find-button-text: unset; /* none = hide | unset = show */
 --hide-bookmarks-menu-button-text: unset; /* none = hide | unset = show */
 --show-tab-icons: none; /* none = hide | unset = show */
+--lock-toolbars: block; /* none = hide | block = show */
 }
 
 #urlbar-container {
@@ -70,6 +71,7 @@ menupopup {
 
 #main-menubar > menu {
 	appearance: menuitem !important;
+	min-height: 19px !important;
 }
 
 /* Status Bar */
@@ -117,7 +119,8 @@ menupopup {
 /* I give up making comments. */
 #navigator-toolbox {
 	border-bottom: 0 !important;
-		appearance: groupbox !important;
+	appearance: groupbox !important;
+	margin-bottom: 2px !important;
 }
 
 .browserStack,
@@ -130,6 +133,10 @@ menupopup {
   border-top: 1px solid ThreeDShadow !important;
   box-shadow: inset 0 1px 0 ThreeDHighlight !important;
   padding-top: 1px !important;
+}
+
+#PersonalToolbar {
+	padding-inline: 0 !important;
 }
 
 .tabbrowser-tab {
@@ -347,24 +354,50 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 	padding: 2px !important;
 }
 
-.bookmark-item:hover {
+.bookmark-item:hover,
+#tabs-newtab-button:hover,
+.toolbarbutton-1:not(#activity_throbber):hover,
+#PlacesChevron:hover,
+#sidebar-close:hover,
+#placesToolbar > toolbarbutton:not([disabled]):hover {
 	border-top-color: ThreeDHighlight;
 	border-left-color: ThreeDHighlight;
 	border-right-color: ThreeDShadow;
 	border-bottom-color: ThreeDShadow;
 }
 
-.bookmark-item:active, .bookmark-item[open="true"] {
+.bookmark-item:active, 
+.bookmark-item[open="true"],
+#sidebar-close:active,
+#tabs-newtab-button:active,
+.toolbarbutton-1:not(#activity_throbber):active,
+.toolbarbutton-1:not(#activity_throbber)[open="true"],
+#PlacesChevron[open="true"],
+#PlacesChevron:active,
+#placesToolbar > toolbarbutton:not([disabled]):active {
 	border-top-color: ThreeDShadow;
 	border-left-color: ThreeDShadow;
 	border-right-color: ThreeDHighlight;
 	border-bottom-color: ThreeDHighlight;
 }
 
+#PlacesChevron[open="true"] .toolbarbutton-icon,
+#PlacesChevron:active .toolbarbutton-icon,
 #PlacesToolbar .bookmark-item:active > *,
-#PlacesToolbar .bookmark-item[open="true"] > * {
+#PlacesToolbar .bookmark-item[open="true"] > *,
+.toolbarbutton-1:not(#activity_throbber):active > *,
+.toolbarbutton-1:not(#activity_throbber)[open="true"] > *,
+#viewButton[open="true"] .button-box,
+#viewButton:active .button-box,
+#sidebar-close:active .toolbarbutton-icon,
+.close-icon.findbar-closebutton:active,
+.findbar-find-previous:not([disabled="true"]):active .toolbarbutton-icon, 
+.findbar-find-next:not([disabled="true"]):active .toolbarbutton-icon,
+#tabs-newtab-button:active .toolbarbutton-icon,
+#placesToolbar > toolbarbutton:not([disabled]):active {
 	transform: translate(1px, 1px);
 }
+
 
 #PlacesToolbarItems > toolbarseparator {
 	padding-inline: 0 !important;
@@ -413,7 +446,26 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 	line-height: 22px;
 	padding-left: 4px;
 	padding-right: 4px;
+	-moz-box-ordinal-group: 1 !important;
 }
+
+#additional_top_toolbar1::after,
+.browser-toolbar:not(#TabsToolbar)::after {
+	content: '';
+	display: var(--lock-toolbars);
+	width: 3px;
+	height: 100%;
+	box-shadow: inset -1px -1px 0 ThreeDShadow, inset 1px 1px 0 ThreeDHighlight;
+	margin: 2px;
+	margin-right: 0;
+	cursor: ew-resize;
+	-moz-box-ordinal-group: 0 !important;
+}
+
+#nav-bar::after,
+#toolbar-menubar::after {
+  margin-right: 4px !important;
+} 
 
 #urlbar-container {
 	display: flex !important;
@@ -475,23 +527,7 @@ toolbar:not(#TabsToolbar) #new-tab-button {
 	width: 24px !important;
 }
 
-#tabs-newtab-button:hover {
-	border-bottom-color: ThreeDShadow;
-	border-right-color: ThreeDShadow;
-	border-left-color: ThreeDHighlight;
-	border-top-color: ThreeDHighlight;
-}
 
-#tabs-newtab-button:active {
-	border-top-color: ThreeDShadow;
-	border-left-color: ThreeDShadow;
-	border-right-color: ThreeDHighlight;
-	border-bottom-color: ThreeDHighlight;
-}
-
-#tabs-newtab-button:active .toolbarbutton-icon {
-	transform: translate(1px, 1px)
-}
 
 #tabs-newtab-button .toolbarbutton-icon,
 toolbar:not(#TabsToolbar) #new-tab-button .toolbarbutton-icon,
@@ -656,25 +692,7 @@ height: 16px !important;
 	border: 1px solid transparent;
 }
 
-.toolbarbutton-1:not(#activity_throbber):active > *,
-.toolbarbutton-1:not(#activity_throbber)[open="true"] > * {
-	transform: translate(1px, 1px);
-}
 
-.toolbarbutton-1:not(#activity_throbber):hover {
-	border-bottom-color: ThreeDShadow;
-	border-right-color: ThreeDShadow;
-	border-left-color: ThreeDHighlight;
-	border-top-color: ThreeDHighlight;
-}
-
-.toolbarbutton-1:not(#activity_throbber):active,
-.toolbarbutton-1:not(#activity_throbber)[open="true"] {
-	border-top-color: ThreeDShadow;
-	border-left-color: ThreeDShadow;
-	border-right-color: ThreeDHighlight;
-	border-bottom-color: ThreeDHighlight;
-}
 
 toolbarbutton:where([disabled="true"]) {
 	color: ThreeDShadow !important;
@@ -725,9 +743,9 @@ toolbar:not(#nav-bar) .webextension-browser-action {
 	transform: scaleX(-1);
 }
 
-#nav-bar .toolbarbutton-1:hover .toolbarbutton-icon,
-#nav-bar .toolbarbutton-1:active .toolbarbutton-icon,
-#nav-bar .toolbarbutton-1[open="true"] .toolbarbutton-icon {
+#nav-bar .toolbarbutton-1:not(#back-button[disabled="true"]):not(#forward-button[disabled="true"]):hover .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:not(#back-button[disabled="true"]):not(#forward-button[disabled="true"]):active .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1:not(#back-button[disabled="true"]):not(#forward-button[disabled="true"])[open="true"] .toolbarbutton-icon {
 	filter: none !important;
 }
 
@@ -917,24 +935,8 @@ toolbar:not(#nav-bar) .webextension-browser-action {
 	padding: 0 !important;
 }
 
-#PlacesChevron:hover {
-	border-bottom-color: ThreeDShadow;
-	border-right-color: ThreeDShadow;
-	border-left-color: ThreeDHighlight;
-	border-top-color: ThreeDHighlight;
-}
-
-#PlacesChevron:active,
-#PlacesChevron[open="true"] {
-	border-top-color: ThreeDShadow;
-	border-left-color: ThreeDShadow;
-	border-right-color: ThreeDHighlight;
-	border-bottom-color: ThreeDHighlight;
-}
-
-#PlacesChevron[open="true"] .toolbarbutton-icon,
-#PlacesChevron:active .toolbarbutton-icon {
-	transform: translate(1px, 1px);
+#personal-toolbar-empty-description, #PersonalToolbar .toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton) {
+	margin: 0 !important;
 }
 
 #PlacesChevron .toolbarbutton-icon, #nav-bar-overflow-button .toolbarbutton-icon {
@@ -955,6 +957,7 @@ findbar {
 	border-top: 0 !important;
 	padding-block-start: 4px !important;
 	padding-block-end: 4px !important;
+	margin-top: -2px !important;
 }
 
 .findbar-textbox {
@@ -994,16 +997,12 @@ hbox[anonid="findbar-textbox-wrapper"]::after {
 	border-right: 1px solid ThreeDHighlight !important;
 }
 
-.findbar-find-previous:hover, .findbar-find-next:hover {
+.findbar-find-previous:not([disabled="true"]):hover, .findbar-find-next:not([disabled="true"]):hover {
 	box-shadow: inset -1px -1px 0 ThreeDShadow, inset 1px 1px 0 ThreeDHighlight;
 }
 
-.findbar-find-previous:active, .findbar-find-next:active {
+.findbar-find-previous:not([disabled="true"]):active, .findbar-find-next:not([disabled="true"]):active {
 	box-shadow: inset -1px -1px 0 ThreeDHighlight, inset 1px 1px 0 ThreeDShadow;
-}
-
-.findbar-find-previous:active .toolbarbutton-icon, .findbar-find-next:active .toolbarbutton-icon {
-	transform: translate(1px, 1px) !important;
 }
 
 .findbar-find-previous .toolbarbutton-icon, .findbar-find-next .toolbarbutton-icon {
@@ -1064,9 +1063,7 @@ hbox[anonid="findbar-textbox-wrapper"]::after {
 	mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAACRJREFUGFdjYGBgBAIgBWaBSTAbSEG5yAwQDVUBEQTRjIwMDAADqAAZRZMazAAAAABJRU5ErkJggg==") !important;
 }
 
-.close-icon.findbar-closebutton:active {
-	transform: translate(1px, 1px) !important;
-}
+
 
 #sidebar-box {
 	margin-right: 4px; 
@@ -1119,23 +1116,9 @@ treecol, treecolpicker {
 	mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAYAAAA1WQxeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA4SURBVBhXY2RgYPgPxCAAYiMDmDgYgDjIAnA+si4UHUCAbiIYoJtEvAnoOuF8kCqYBLqdQHEGBgAx7A/5GaSbcgAAAABJRU5ErkJggg==") !important;
 }
 
-#sidebar-close:hover {
-	border-bottom-color: ThreeDShadow;
-	border-right-color: ThreeDShadow;
-	border-left-color: ThreeDHighlight;
-	border-top-color: ThreeDHighlight;
-}
 
-#sidebar-close:active {
-	border-top-color: ThreeDShadow;
-	border-left-color: ThreeDShadow;
-	border-right-color: ThreeDHighlight;
-	border-bottom-color: ThreeDHighlight;
-}
 
-#sidebar-close:active .toolbarbutton-icon {
-	transform: translate(1px, 1px);
-}
+
 
 #sidebar-title {
 	padding-inline: 0 !important;
@@ -1180,10 +1163,7 @@ treecol, treecolpicker {
 	appearance: button !important;
 }
 
-#viewButton[open="true"] .button-box,
-#viewButton:active .button-box {
-	transform: translate(1px, 1px);
-}
+
 
 #search-box {
 	padding: 2px !important;
@@ -1469,6 +1449,9 @@ richlistbox[seltype="multiple"]:focus > richlistitem[current="true"], richlistbo
 #placesToolbar > toolbarbutton {
 	border-radius: 0 !important;
 	appearance: button !important;
+	background-color: -moz-Dialog !important;
+	border: 1px solid transparent;
+	padding: 4px !important;
 }
 
 .tabbrowser-tab[pinned="true"] .tab-label-container {
@@ -1488,4 +1471,8 @@ richlistbox[seltype="multiple"]:focus > richlistitem[current="true"], richlistbo
 
 #context-navigation .menu-iconic-left {
   padding-top: 0 !important;
+}
+
+.urlbarView-results[wrap] > .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url:-moz-locale-dir(ltr) {
+	padding-left: 19px !important;
 }
