@@ -40,7 +40,13 @@
 --hide-find-button-text: unset; /* none = hide | unset = show */
 --hide-bookmarks-menu-button-text: unset; /* none = hide | unset = show */
 --show-tab-icons: unset; /* none = hide | unset = show */
+--show-alltabs-button: unset; /* none = hide | unset = show */
+--show-status-bar: unset; /* none = hide | unset = show */
 --lock-toolbars: block; /* none = hide | block = show */
+}
+
+menupopup, panel {
+	--windows-panel-box-shadow: none !important;
 }
 
 #urlbar-container {
@@ -79,6 +85,7 @@ menupopup {
 #browser-bottombox {
 	margin-top: 2px;
 	min-height: 18px;
+	display: var(--show-status-bar);
 	box-shadow: inset -1px -1px 0 ThreeDHighlight, inset 1px 1px 0 ThreeDShadow;
 }
 
@@ -98,16 +105,20 @@ menupopup {
 	border: 0 !important;
 	padding-top: unset !important;
 	padding-bottom: unset !important;
+	padding-left: 2px !important;
 }
 
 #statuspanel {
 	display: flex !important;
 	align-items: center !important;
 	margin-top: unset !important;
-	bottom: 0px !important;
-	left: 0 !important;
+	bottom: 1px !important;
+	left: 1px !important;
 	transition: none !important;
-	min-height: 18px !important;
+	min-height: 16px !important;
+	position: fixed !important;
+	padding-top: 0 !important;
+	background-color: -moz-Dialog !important;
 }
 
 #statuspanel-inner {
@@ -270,8 +281,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 }
 
 #menubar-items {
-	display: flex;
-  align-items: center;
+  -moz-box-pack: center !important;
 }
 
 .tab-secondary-label {
@@ -692,7 +702,7 @@ height: 16px !important;
 	min-height: 12px !important;
 }
 
-#nav-bar .toolbarbutton-icon {
+#nav-bar .toolbarbutton-1 > .toolbarbutton-icon {
 	filter: grayscale(1);
 }
 
@@ -1483,4 +1493,25 @@ richlistbox[seltype="multiple"]:focus > richlistitem[current="true"], richlistbo
 
 .urlbarView-results[wrap] > .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url:-moz-locale-dir(ltr) {
 	padding-left: 19px !important;
+}
+
+#TabsToolbar .toolbarbutton-1 {
+	margin: 2px 0 0 !important;
+}
+
+#alltabs-button {
+	list-style-image: none !important;
+	padding: 0 5px !important;
+	display: var(--show-alltabs-button) !important;
+}
+
+#alltabs-button .toolbarbutton-icon {
+	mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADCAYAAABbNsX4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAdSURBVBhXY2RgYPgPxCgAJAgCyBIwMTCASjAwAABmWAMBUTt/MQAAAABJRU5ErkJggg==") !important;
+	background-color: -moz-DialogText !important;
+	width: 5px !important;
+	height: 3px !important;
+}
+
+#alltabs-button .toolbarbutton-badge-stack {
+	padding: 0 !important;
 }
