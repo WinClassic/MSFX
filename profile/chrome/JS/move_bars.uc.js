@@ -61,8 +61,4 @@ var MoveUrlbar = {
 
 }
 
-//document.addEventListener("DOMContentLoaded", MoveUrlbar.init(), false);
-
-setTimeout(function(){
-  MoveUrlbar.init();
-},500);
+document.addEventListener("DOMContentLoaded", MoveUrlbar.init(), false);
