@@ -1,0 +1,116 @@
+/** Context Menus *****************************/
+/* Readd 3D borders to Context Menus */
+menupopup {
+	padding: 2px !important;
+	box-shadow: inset -1px -1px 0 ThreeDDarkShadow, inset 1px 1px 0 ThreeDFace, inset -2px -2px 0 ThreeDShadow, inset 2px 2px 0 ThreeDHighlight !important;
+	border: 0px solid transparent !important;
+}
+
+/** Navigator Toolbox *****************************/
+/* Add border surrounding the Navigator Toolbox */
+#navigator-toolbox {
+    appearance: groupbox !important;
+	  border-bottom: 0 !important;
+	  
+	  /* Add bottom margin */
+    margin-block-end: 3px !important;
+}
+
+
+/** Toolbars *****************************/
+/* Add borders between every toolbar */
+.browser-toolbar {
+	padding-block-end: 1px !important;
+	box-shadow: inset 0 -1px 0 ThreeDShadow !important;
+	border-top: 1px solid ThreeDHighlight !important;
+}
+
+#toolbar-menubar {
+	border-top: 0 !important;
+}
+
+#TabsToolbar {
+	box-shadow: none !important;
+}
+
+/* Add captions to certain Toolbars */
+#PersonalToolbar::before,
+#additional_top_toolbar1::before {
+	line-height: 22px !important;
+	margin-inline: 5px !important;
+}
+
+/* Bookmarks Toolbar caption */
+/* This has to be changed if you want it to be another language */
+#PersonalToolbar::before {
+	content: 'Links';
+}
+
+#additional_top_toolbar1::before {
+	content: 'Address';
+}
+
+/** Menu Bar *****************************/
+#main-menubar > menu {
+	appearance: menuitem !important;
+}
+
+#main-menubar > menu > .menubar-text {
+	appearance: menuitemtext !important;
+}
+
+/* Center menubar items vertically */
+#menubar-items {
+	-moz-box-pack: center;
+}
+
+/** Fix Flexible Spaces ****************************/
+toolbarspring {
+	-moz-box-flex: 100000 !important;
+}
+
+/** Add inset border to webpage content ****************************/ 
+.browserStack {
+	-moz-default-appearance: listbox !important;
+	-moz-appearance: listbox !important;
+}
+
+/** Throbber - Images because I don't know how to do it in JS ****************************/ 
+#activity_throbber {
+	background-image: url('./assets/images/throbber.png');
+}
+
+#activity-throbber[busy] {
+	background-image: url('./assets/images/throbberbusy.gif') !important;
+}
+
+/** Bookmarks Toolbar **/
+#PersonalToolbar {
+	padding-inline: 0 !important;
+}
+
+#personal-toolbar-empty-description, #PersonalToolbar .toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton) {
+	margin: 0 !important;
+}
+
+#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon[label]:not([label=""]) {
+  margin-inline-end: 0 !important;
+}
+
+#PersonalToolbar #import-button > .toolbarbutton-text, .bookmark-item > .toolbarbutton-text {
+	margin-inline: 5px !important;
+}
+
+/** Hover effect I guess ****************************/ 
+toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"], [open]):hover {
+	box-shadow: inset -1px -1px 0 ThreeDShadow, inset 1px 1px 0 ThreeDHighlight !important;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"]):active {
+  box-shadow: inset -1px -1px 0 ThreeDHighlight, inset 1px 1px 0 ThreeDShadow !important;
+}
+
+/* "Pressed Effect" when it's active */
+toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"]):active > * {
+	transform: translate(1px, 1px) !important;
+}

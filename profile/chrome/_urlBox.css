@@ -1,0 +1,61 @@
+/* Urlbar Container height */
+#urlbar-container[breakout] {
+  --urlbar-container-height: 22px !important;
+}
+
+/* Urlbar height */
+#urlbar {
+  --urlbar-height: 22px !important;
+  --urlbar-toolbar-height: 22px !important;
+}
+
+#urlbar, #searchbar {
+  min-height: unset !important;
+}
+
+/* Urlbar Border and Background */
+#urlbar-background, #searchbar {
+	-moz-default-appearance: listbox !important;
+	-moz-appearance: listbox !important;
+}
+
+/* Remove annoying shadow from Urlbar Background */
+#urlbar[focused="true"] > #urlbar-background,
+#searchbar:focus-within {
+  box-shadow: none !important;
+}
+
+/* Remove Urlbar Background outline */
+#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background,
+#searchbar:focus-within {
+  outline: 0 !important;
+}
+
+/* Set font */
+#urlbar {
+  font: caption !important;
+}
+
+/* Remove Spacing */
+#urlbar-container, #search-container {
+  padding-block: 0 !important;
+  margin-inline: 0 !important;
+}
+
+/* Hide things */
+#identity-permission-box[open="true"], #identity-permission-box[hasPermissions], #identity-permission-box[hasSharingIcon],
+#tracking-protection-icon-container,
+#identity-icon-box,
+#identity-permission-box {
+  display: none !important;
+}
+
+#identity-box[pageproxystate="valid"].notSecureText, #identity-box[pageproxystate="valid"].chromeUI, #identity-box[pageproxystate="valid"].extensionPage, #urlbar-label-box {
+  margin-inline-end: 5px !important;
+}
+
+/* Fix action icons */
+.urlbar-page-action, #urlbar-go-button, .search-go-button {
+  width: 18px !important;
+  padding: 2px !important;
+}
