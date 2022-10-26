@@ -1,0 +1,19 @@
+:root {
+  --tab-min-height: 22px !important;
+}
+
+.tabbrowser-tab {
+  appearance: tab !important;
+}
+
+.tab-background {
+  display: none !important;
+}
+
+.tabbrowser-tab:not([visuallyselected="true"]) {
+  margin-bottom: -1px !important;
+}
+
+#tabbrowser-tabs {
+  padding-inline-start: 4px !important;
+}
