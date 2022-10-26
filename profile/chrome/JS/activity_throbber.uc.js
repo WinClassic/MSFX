@@ -44,10 +44,23 @@ var ActivityThrobber = {
 	var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
 		\
 		#activity_throbber { \
-		  -moz-appearance: none !important; \
-		  list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJ1BMVEUAAAC0tLS0tLSysrK0tLS0tLS0tLS1tbW0tLS6urq0tLS3t7eurq4SF2bYAAAADXRSTlMA2oILm3RnVEEF0y4TZ0HrPwAAAE5JREFUCNdjAAIjZQYISBQDU1uUA0WNvIEMR/FDOoUiQIbiCgaGLiEgY3oDAwNHJQPDtGCQQtNMBkWQKJCEM+BSMMVw7XAD4VYgLIU7AwA5fBJ3rMaMkwAAAABJRU5ErkJggg==); \
-		  width: 16px !important; \
-		  height: 16px !important; \
+			-moz-appearance: none !important; \
+			background-color: #000; \
+			border-left: 1px solid ThreeDHighlight; \
+			box-shadow: -1px 0 0 ThreeDShadow; \
+			list-style-image: none !important; \
+			background-repeat: no-repeat; \
+			background-position: center center; \
+			min-width: 39px !important; \
+			min-height: 22px !important; \
+			padding: 0 !important; \
+		} \
+		#activity_throbber .toolbarbutton-icon { \
+			display: none !important; \
+			height: 0 !important; \
+			width: 0 !important; \
+			visbility: collaspe !important; \
+			opacity: 0 !important; \
 		} \
 		#activity_throbber *,\
 		#activity_throbber:hover * { \
@@ -55,9 +68,6 @@ var ActivityThrobber = {
 		  opacity: 1.0 !important; \
 		  box-shadow: unset !important; \
 		  background: unset !important; \
-		} \
-		#activity_throbber[busy] { \
-		  list-style-image: url("chrome://global/skin/media/throbber.png"); \
 		} \
 		\
 	'), null, null);
