@@ -106,11 +106,13 @@ toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"], [open]):hover
 	box-shadow: inset -1px -1px 0 ThreeDShadow, inset 1px 1px 0 ThreeDHighlight !important;
 }
 
-toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"]):active {
+toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"]):active,
+toolbarbutton.bookmark-item[open="true"] {
   box-shadow: inset -1px -1px 0 ThreeDHighlight, inset 1px 1px 0 ThreeDShadow !important;
 }
 
 /* "Pressed Effect" when it's active */
-toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"]):active > * {
+toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"]):active > *,
+toolbarbutton.bookmark-item[open="true"] > *{
 	transform: translate(1px, 1px) !important;
 }
