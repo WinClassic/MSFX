@@ -32,9 +32,9 @@
 --tab-border-radius: 0px !important;
 --tab-shadow-max-size: 0px !important;
 --tab-block-margin: 0px !important;
---tab-min-height: 26px !important;
+--tab-min-height: 24px !important;
 --arrowpanel-border-radius: 0px !important;
---hide-tab-close-button: unset; /* none = hide | unset = show */
+--hide-tab-close-button: none; /* none = hide | unset = show */
 --hide-back-button-text: unset; /* none = hide | unset = show */
 --hide-history-button-text: unset; /* none = hide | unset = show */
 --hide-find-button-text: unset; /* none = hide | unset = show */
@@ -205,6 +205,7 @@ menupopup {
   padding: 0 !important;
 	width: 10px !important;
 	height: 10px !important;
+	transform: translate(-1px, -1px);
 	margin-inline-end: calc(var(--inline-tab-padding) + 2px) !important;
 	list-style-image: none !important;
 	background-color: -moz-DialogText !important;
@@ -346,7 +347,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 
 .tabbrowser-tab {
 	min-height: calc(var(--tab-min-height) - 3px) !important;
-	padding: 0 2px !important;
+	padding: 0 1px !important;
 	margin-top: 2px !important;
 }
 
@@ -366,7 +367,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 
 .tabbrowser-tab:not([pinned="true"]) .tab-icon-image {
 	display: var(--show-tab-icons) !important;
-	margin-bottom: 2px !important;
+	margin-bottom: 1px !important;
 }
 
 .tabbrowser-tab[pinned="true"] .tab-icon-stack[soundplaying="true"] .tab-icon-image {
@@ -382,17 +383,18 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 }
 
 .tabbrowser-tab[label="New Tab"][image]:not([busy]) .tab-label-container:not([selected="true"])::before {
-	 top: 3px;
+	 top: 2px;
 }
 
 .tabbrowser-tab[label="New Tab"][image]:not([busy]) .tab-label-container::before {
     content: "";
+	 display: var(--show-tab-icons) !important;
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABgUExURYaGhv///5mZmVVVVf/78ABmzDMzMwAAgDNm//Hx8czMzHd3d2aZmZnMzDMzzGb//+rq6pmZZv//mQDM/+fn1v/MmcyZZjNmzF9fXwAzmcDAwABmmYCAADMzZgQEBAAAANSdJEsAAAAgdFJOU/////////////////////////////////////////8AXFwb7QAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAIpJREFUKFNNjFsWgyAMREUIRGhTbOlLW7P/XRoD2t6Tj8w9k3TM3O3IzipMpbeHcEpvxOwCwDnrvVcRQHA4xD7ZTYTTmegCg8tRvnQcxqvU6QZDLnET6Y7bCUAuKtLjidKQg1Ibr/GNOE2Ec2t86EsoSG4/iJdlnjVXwZRMliDTBKd40IT9oeIP5hU1fA8vue4FsgAAAABJRU5ErkJggg==') !important;
     background-size: 100%;
     width: 16px;
     height: 16px;
     position: absolute;
-    top: 4px;
+    top: 3px;
     left: 0px;
     pointer-events: none;
     opacity: 1;
@@ -404,6 +406,14 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 
 :root[uidensity="compact"] .tab-icon-stack[indicator-replaces-favicon] > :not(.tab-icon-overlay), #tabbrowser-tabs[secondarytext-unsupported] .tab-icon-stack[indicator-replaces-favicon] > :not(.tab-icon-overlay), :root:not([uidensity="compact"]) #tabbrowser-tabs:not([secondarytext-unsupported]) .tabbrowser-tab:not(:hover) .tab-icon-overlay[indicator-replaces-favicon], :root:not([uidensity="compact"]) #tabbrowser-tabs:not([secondarytext-unsupported]) .tabbrowser-tab:hover .tab-icon-stack[indicator-replaces-favicon] > :not(.tab-icon-overlay) {
 	opacity: 1 !important;
+}
+
+.tab-icon-stack {
+	display: flex !important;
+}
+
+.tab-icon-stack[indicator-replaces-favicon="true"] .tab-icon-image {
+	margin-inline-end: 0 !important;
 }
 
 #tabbrowser-tabs tab:first-of-type:last-of-type,
@@ -611,14 +621,11 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 }
 
 #tabs-newtab-button {
-	min-height: 20px !important;
-	min-width: 26px !important;
+	min-height: 22px !important;
+	min-width: 24px !important;
 	border: 1px solid transparent;
 	padding: 0 !important;
 	background: transparent !important;
-	margin-inline-start: 4px !important;
-	margin-top: 2px !important;
-	margin-bottom: 0 !important;
 }
 
 toolbar:not(#TabsToolbar) #new-tab-button {
