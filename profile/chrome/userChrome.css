@@ -1129,8 +1129,9 @@ hbox[anonid="findbar-textbox-wrapper"]::after {
 }
 
 .findbar-container {
-	height: 0 !important;
+	height: 22px !important;
 	margin-inline-start: 0 !important;
+	overflow-inline: unset !important;
 }
 
 .findbar-container::before {
