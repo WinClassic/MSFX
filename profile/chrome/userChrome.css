@@ -34,6 +34,9 @@
 --tab-block-margin: 0px !important;
 --tab-min-height: 24px !important;
 --arrowpanel-border-radius: 0px !important;
+
+
+/** MSFX CONFIGURATION **/
 --hide-tab-close-button: none; /* none = hide | unset = show */
 --hide-back-button-text: unset; /* none = hide | unset = show */
 --hide-history-button-text: unset; /* none = hide | unset = show */
@@ -43,7 +46,7 @@
 --show-alltabs-button: none; /* none = hide | unset = show */ /* THIS BREAKS HIDING TABS WHEN THERES ONLY ONE!!! */
 --show-status-bar: flex; /* none = hide | flex = show */
 --lock-toolbars: block; /* none = hide | block = show */
---show-history-menu-item: none; 
+--show-history-menu-item: none;  /* none = hide | unset = show */
 }
 
 menupopup, panel {
@@ -1645,4 +1648,27 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon {
 
 #history-menu {
 	display: var(--show-history-menu-item) !important;
+}
+
+#go-button {
+	padding: 0 5px !important;
+	margin-inline-end: 3px !important;
+	margin-inline-start: 2px !important;
+}
+
+#go-button .toolbarbutton-text {
+	display: block;
+	min-height: 0 !important;
+	padding: 0 0 0 1px !important;
+}
+
+#go-button .toolbarbutton-icon {
+	padding: 0 !important;
+	filter: grayscale(1);
+	list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAYUExURTNmAAAAAPj4+Mz/mTP/ZjPMZjOZAAAAAJkkoxgAAAAIdFJOU/////////8A3oO9WQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAF5JREFUKFNNzFESACEIAlA1zfvfeAG3KT4q3jRYn/yvB3wunYyF5ICZxaIMoEWsTIgAFS2ztgvwOfeuYh9Y5Yg6waL4cnWB1tt1CjgOUH/gD0ETJ4AzNyFg74rgpvsD1l4FfttxzJYAAAAASUVORK5CYII=")
+}
+
+#go-button:hover .toolbarbutton-icon,
+#go-button:active .toolbarbutton-icon {
+	filter: none;
 }
