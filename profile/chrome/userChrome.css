@@ -427,6 +427,10 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
   display: -moz-box !important;
 }
 
+#stop-reload-button #stop-button {
+	-moz-box-ordinal-group: 0 !important;
+}
+
 #urlbar[breakout-extend] {
     top: calc(var((--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
     left: 0 !important;
