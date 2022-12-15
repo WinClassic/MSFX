@@ -1112,7 +1112,7 @@ toolbarpaletteitem[mousedown] > toolbarbutton > .toolbarbutton-icon, toolbarpale
 }
 
 #PlacesChevron .toolbarbutton-icon, #nav-bar-overflow-button .toolbarbutton-icon {
-	mask-position: center 0;
+	mask-position: center 4px;
 	width: 8px !important;
 	height: 100% !important;
 	padding: 6px !important;
