@@ -1906,3 +1906,17 @@ list-style-image: url("toolbar_large.png") !important;
 :root[uidensity="touch"] #search-box, :root[uidensity="touch"] .sidebar-placesTreechildren::-moz-tree-row {
 	min-height: 20px !important;
 }
+
+toolbar .toolbaritem-combined-buttons {
+	margin-inline: 0 !important;
+}
+
+.unified-extensions-item-action.subviewbutton {
+	border-radius: 0 !important;
+	height: 100% !important;
+	width: 24px !important;
+}
+
+:root[uidensity="touch"] .unified-extensions-item-action.subviewbutton {
+	width: 28px !important;
+}
