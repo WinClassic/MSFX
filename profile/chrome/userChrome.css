@@ -801,7 +801,7 @@ list-style-image: url("toolbar.png") !important;
 height: 16px !important;
 }
 
-toolbarbutton:not(:hover):not(#forward-button[disabled="true"]):not(#back-button[disabled="true"]) .toolbarbutton-icon {
+toolbarbutton:not(#tabs-newtab-button):not(:hover):not(#forward-button[disabled="true"]):not(#back-button[disabled="true"]) .toolbarbutton-icon {
 	mix-blend-mode: luminosity;
 }
 
