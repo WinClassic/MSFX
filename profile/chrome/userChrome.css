@@ -39,13 +39,13 @@
 /** MSFX CONFIGURATION **/
 --hide-tab-close-button: none; /* none = hide | unset = show */
 --hide-back-button-text: unset; /* none = hide | unset = show */
---hide-history-button-text: none; /* none = hide | unset = show */
+--hide-history-button-text: unset; /* none = hide | unset = show */
 --hide-find-button-text: unset; /* none = hide | unset = show */
 --hide-bookmarks-menu-button-text: unset; /* none = hide | unset = show */
 --show-tab-icons: unset; /* none = hide | unset = show */
 --show-alltabs-button: none; /* none = hide | unset = show */ /* THIS BREAKS HIDING TABS WHEN THERES ONLY ONE!!! */
 --show-status-bar: flex; /* none = hide | flex = show */
---lock-toolbars: none; /* none = hide | block = show */
+--lock-toolbars: block; /* none = hide | block = show */
 --show-history-menu-item: none;  /* none = hide | unset = show */
 }
 
@@ -564,7 +564,6 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 	content: '';
 	display: var(--lock-toolbars);
 	width: 3px;
-	height: 100%;
 	box-shadow: inset -1px -1px 0 ThreeDShadow, inset 1px 1px 0 ThreeDHighlight;
 	margin: 2px;
 	margin-right: 0;
