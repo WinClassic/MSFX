@@ -802,6 +802,10 @@ list-style-image: url("toolbar.png") !important;
 height: 16px !important;
 }
 
+toolbarbutton:not(:hover):not(#forward-button[disabled="true"]):not(#back-button[disabled="true"]) .toolbarbutton-icon {
+	mix-blend-mode: luminosity;
+}
+
 #nav-bar .toolbarbutton-1 {
 	min-height: 12px !important;
 }
