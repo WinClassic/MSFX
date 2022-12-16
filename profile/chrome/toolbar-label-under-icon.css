@@ -1,0 +1,23 @@
+:root[uidensity="touch"] #nav-bar toolbarbutton:not(#nav-bar-overflow-button):not(#PanelUI-menu-button) .toolbarbutton-text {
+  display: unset !important;
+}
+
+:root[uidensity="touch"] #nav-bar {
+  height: 42px !important;
+}
+
+:root[uidensity="touch"] #nav-bar toolbarbutton:not(#nav-bar-overflow-button):not(#PanelUI-menu-button) {
+   min-width: 58px !important;
+   padding-top: 2px !important;
+}
+
+:root[uidensity="touch"] #nav-bar toolbarbutton {
+  -moz-box-orient: vertical;
+ 
+}
+
+:root[uidensity="touch"] #nav-bar .toolbarbutton-1 .toolbarbutton-text {
+  margin-top: 3px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
