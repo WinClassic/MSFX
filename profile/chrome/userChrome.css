@@ -1920,6 +1920,7 @@ toolbar .toolbaritem-combined-buttons {
 	border-radius: 0 !important;
 	height: 100% !important;
 	width: 24px !important;
+	background-color: -moz-Dialog !important;
 }
 
 :root[uidensity="touch"] .unified-extensions-item-action.subviewbutton {
