@@ -1923,6 +1923,17 @@ toolbar .toolbaritem-combined-buttons {
 	background-color: -moz-Dialog !important;
 }
 
+toolbarbutton:where([disabled="true"]) {
+	text-shadow: none !important;
+	color: -moz-DialogText !important;
+}
+
+#back-button:where([disabled="true"]),
+#forward-button:where([disabled="true"]) {
+	color: ThreeDShadow !important;
+	text-shadow: 1px 1px 0 ThreeDHighlight !important;
+}
+
 :root[uidensity="touch"] .unified-extensions-item-action.subviewbutton {
 	width: 28px !important;
 }
