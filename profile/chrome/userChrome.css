@@ -554,7 +554,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 #additional_top_toolbar1::before {
 	content: 'Address';
 	display: block;
-  height: 100%;
+  	height: 100%;
 	line-height: 22px;
 	padding-left: 4px;
 	padding-right: 4px;
@@ -566,6 +566,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 	content: '';
 	display: var(--lock-toolbars);
 	width: 3px;
+	height: calc(100% - 4px) !important;
 	box-shadow: inset -1px -1px 0 ThreeDShadow, inset 1px 1px 0 ThreeDHighlight;
 	margin: 2px;
 	margin-right: 0;
