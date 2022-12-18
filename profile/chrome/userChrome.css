@@ -1938,3 +1938,7 @@ toolbarbutton:where([disabled="true"]) {
 :root[uidensity="touch"] .unified-extensions-item-action.subviewbutton {
 	width: 28px !important;
 }
+
+#unified-extensions-button {
+	display: none !important;
+}
