@@ -37,7 +37,6 @@
 --tab-min-height: 18px !important;
 --arrowpanel-border-radius: 0px !important;
 
-
 /** MSFX CONFIGURATION **/
 --hide-tab-close-button: none; /* none = hide | unset = show */
 --hide-back-button-text: unset; /* none = hide | unset = show */
@@ -48,7 +47,7 @@
 --show-alltabs-button: none; /* none = hide | unset = show */ /* THIS BREAKS HIDING TABS WHEN THERES ONLY ONE!!! */
 --show-status-bar: flex; /* none = hide | flex = show */
 --lock-toolbars: block; /* none = hide | block = show */
---navigator-toolbox-gap: 2px; /* 2px = Unlocked | 0px = Locked */ /* This variable is for the gap between the browser content and the Toolbars. */
+--navigator-toolbox-gap: 0px; /* 2px = Unlocked | 0px = Locked */ /* This variable is for the gap between the browser content and the Toolbars. */
 --show-history-menu-item: none;  /* none = hide | unset = show */
 --selected-tab-font-weight: 600 !important; /* 600 = bold | 500 = normal */
 --toolbar-tinting: luminosity !important;  /* luminosity = tinted | normal = disabled */
@@ -366,7 +365,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 
 .tabbrowser-tab[visuallyselected="true"] {
 	position: unset !important;
-  font-weight: var(--selected-tab-font-weight) !important;	
+	font-weight: var(--selected-tab-font-weight) !important;
 }
 
 .tabbrowser-tab:not([selected=true]) {
@@ -1138,7 +1137,6 @@ findbar {
 	border-top: 0 !important;
 	padding-block-start: 4px !important;
 	padding-block-end: 4px !important;
-	margin-top: -2px !important;
 }
 
 .findbar-textbox {
@@ -1945,6 +1943,44 @@ toolbarbutton:where([disabled="true"]) {
 
 panelview {
 	background: -moz-Dialog !important;
+}
+
+#unified-extensions-button {
+	padding: 0 !important;
+	border: 0 !important;
+}
+
+#unified-extensions-button .toolbarbutton-icon {
+	display: none !important;
+}
+
+.urlbarView-dynamic-quickactions-buttons,
+.urlbarView-button-help {
+	display: none !important;
+}
+
+.urlbarView:not([noresults]) > .search-one-offs:not([hidden]) {
+	border: 1px solid #000000 !important;
+	margin-top: -1px !important;
+	background-color: Window !important;
+}
+
+#urlbar .search-one-offs:not([hidden]) {
+	padding-block: 0 !important;
+}
+
+#urlbar .searchbar-engine-one-off-item {
+	border-radius: 0 !important;
+	margin-inline: 0 !important;
+}
+
+.searchbar-engine-one-off-item:not([selected]):hover {
+	background-color: Highlight !important;
+	color: HighlightText !important;
+}
+
+#urlbar .search-panel-one-offs-header-label {
+	padding-inline: 10px !important;
 }
 
 #personal-toolbar-empty-description {
