@@ -1,4 +1,4 @@
-/* @import url("toolbar-label-under-icon.css"); */ /* Show toolbar labels under icons when the density is set to Touch. */
+@import url("toolbar-label-under-icon.css");
 
 :root {
 --toolbar-bgcolor: -moz-Dialog !important;
@@ -48,7 +48,10 @@
 --show-alltabs-button: none; /* none = hide | unset = show */ /* THIS BREAKS HIDING TABS WHEN THERES ONLY ONE!!! */
 --show-status-bar: flex; /* none = hide | flex = show */
 --lock-toolbars: block; /* none = hide | block = show */
+--navigator-toolbox-gap: 2px; /* 2px = Unlocked | 0px = Locked */ /* This variable is for the gap between the browser content and the Toolbars. */
 --show-history-menu-item: none;  /* none = hide | unset = show */
+--selected-tab-font-weight: 600 !important; /* 600 = bold | 500 = normal */
+--toolbar-tinting: luminosity !important;  /* luminosity = tinted | normal = disabled */
 }
 
 menupopup, panel {
@@ -173,7 +176,7 @@ menupopup {
 #navigator-toolbox {
 	border-bottom: 0 !important;
 	appearance: groupbox !important;
-	margin-bottom: 2px !important;
+	margin-bottom: var(--navigator-toolbox-gap) !important;
 }
 
 .browserStack,
@@ -363,6 +366,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 
 .tabbrowser-tab[visuallyselected="true"] {
 	position: unset !important;
+  font-weight: var(--selected-tab-font-weight) !important;	
 }
 
 .tabbrowser-tab:not([selected=true]) {
@@ -554,7 +558,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 #additional_top_toolbar1::before {
 	content: 'Address';
 	display: block;
-  	height: 100%;
+  height: 100%;
 	line-height: 22px;
 	padding-left: 4px;
 	padding-right: 4px;
@@ -566,7 +570,6 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 	content: '';
 	display: var(--lock-toolbars);
 	width: 3px;
-	height: calc(100% - 4px) !important;
 	box-shadow: inset -1px -1px 0 ThreeDShadow, inset 1px 1px 0 ThreeDHighlight;
 	margin: 2px;
 	margin-right: 0;
@@ -805,7 +808,7 @@ height: 16px !important;
 }
 
 #nav-bar toolbarbutton:not(#tabs-newtab-button):not(:hover):not(#forward-button[disabled="true"]):not(#back-button[disabled="true"]) .toolbarbutton-icon {
-	mix-blend-mode: luminosity;
+	mix-blend-mode: var(--toolbar-tinting);
 }
 
 #nav-bar .toolbarbutton-1 {
@@ -1386,8 +1389,9 @@ list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAM
 
 .titlebar-button {
 	list-style-image: none !important;
-	height: 14px !important;
-	width: 16px !important;
+	height: 20px !important;
+	min-width: 20px !important;
+	padding: 0 !important;
 	margin-top: 2px !important;
 }
 
@@ -1895,7 +1899,7 @@ list-style-image: url("toolbar_large.png") !important;
 :root[uidensity="touch"] #forward-button[disabled="true"] .toolbarbutton-icon {
 	list-style-image: none !important;
 	background-color: ThreeDShadow !important;
-  	mask-image: url("toolbar_large.png") !important;
+  mask-image: url("toolbar_large.png") !important;
 	filter: drop-shadow(1px 1px 0 ThreeDHighlight) !important;
 }
 
@@ -1939,6 +1943,11 @@ toolbarbutton:where([disabled="true"]) {
 	width: 28px !important;
 }
 
-#unified-extensions-button {
-	display: none !important;
+panelview {
+	background: -moz-Dialog !important;
+}
+
+#personal-toolbar-empty-description {
+	min-height: unset !important;
+  display: none !important;
 }
