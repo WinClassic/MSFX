@@ -8,9 +8,13 @@ and set it to "true", then search for
 
 and set it to true, then search for
 
+"browser.display.windows.non_native_menus"
+
+and set the value as "0", then search for
+
 "ui.prefersReducedMotion"
 
-and set the value as "1" (you may need to create it, before you do it select number", then restart Firefox.
+and set the value as "1" (you may need to create it, before you do it, create it as a number), then restart Firefox.
 
 
 Copy the files inside /ffroot to C:\Program Files\Mozilla Firefox (or wherever your Firefox installation is)
