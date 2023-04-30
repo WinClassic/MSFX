@@ -1,6 +1,6 @@
 # MSFX: A Internet Explorer 5 theme for Mozilla Firefox.
 
-![MSFX Screenshot](https://media.discordapp.net/attachments/758913738136354848/1047743808529518692/image.png)
+![MSFX Screenshot](https://cdn.discordapp.com/attachments/881601449845465098/1102098791663947786/Untitled.png)
 
 ### Requirements
 - For back and forward icons to display properly, you must enable `svg.context-properties.content.enabled` in about:config. You also need to set `ui.prefersReducedMotion` to 1 (You may need to create it).
