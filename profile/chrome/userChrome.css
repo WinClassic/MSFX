@@ -47,8 +47,8 @@
 --show-tab-icons: unset; /* none = hide | unset = show */
 --show-alltabs-button: none; /* none = hide | unset = show */ /* THIS BREAKS HIDING TABS WHEN THERES ONLY ONE!!! */
 --show-status-bar: flex; /* none = hide | flex = show */
---lock-toolbars: block; /* none = hide | block = show */
---navigator-toolbox-gap: 3px; /* 3px = Unlocked | 0px = Locked */ /* This variable is for the gap between the browser content and the Toolbars. */
+--lock-toolbars: none; /* none = hide | block = show */
+--navigator-toolbox-gap: 0px; /* 3px = Unlocked | 0px = Locked */ /* This variable is for the gap between the browser content and the Toolbars. */
 --show-history-menu-item: none;  /* none = hide | unset = show */
 --selected-tab-font-weight: 600 !important; /* 600 = bold | 500 = normal */
 --toolbar-tinting: luminosity !important;  /* luminosity = tinted | normal = disabled */
@@ -78,6 +78,14 @@ menupopup {
 	padding: 2px !important;
 	box-shadow: inset -1px -1px 0 ThreeDDarkShadow, inset 1px 1px 0 ThreeDFace, inset -2px -2px 0 ThreeDShadow, inset 2px 2px 0 ThreeDHighlight !important;
 	border: 0px solid transparent !important;
+}
+
+menuseparator {
+	appearance: menuseparator !important;
+}
+
+menuseparator::before {
+	display: none !important;
 }
 
 /* Fix Menubar Selection. */
@@ -283,7 +291,8 @@ menupopup {
 #context-navigation > .menuitem-iconic {
   list-style-image: none !important;
 	position: relative !important;
-	-moz-box-pack: unset !important;
+	align-items: center !important;
+	justify-content: flex-start !important;
 }
 
 menuitem[disabled="true"][_moz-menuactive="true"] {
@@ -346,7 +355,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 }
 
 #menubar-items {
-  -moz-box-pack: center !important;
+  justify-content: center !important;
 }
 
 .tab-secondary-label {
@@ -448,11 +457,11 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 }
 
 #reload-button, #stop-button {
-  display: -moz-box !important;
+  display: flex !important;
 }
 
 #stop-reload-button #stop-button {
-	-moz-box-ordinal-group: 0 !important;
+	order: -1 !important;
 }
 
 #urlbar[breakout-extend] {
@@ -591,7 +600,7 @@ background-image: url("data:image/gif;base64,R0lGODlhFgAWAPYAAAAAAAAAMwAAZgAzAAA
 	margin: 2px;
 	margin-right: 0;
 	cursor: ew-resize;
-	-moz-box-ordinal-group: 0 !important;
+	order: -1 !important;
 }
 
 #nav-bar::after,
@@ -680,7 +689,8 @@ toolbar #new-tab-button.toolbarbutton-1 > .toolbarbutton-icon {
 	padding: 0 !important;
 }
 
-.tab-icon-pending {
+.tab-icon-pending,
+spacer {
 	display: none !important;
 }
 
@@ -1211,7 +1221,7 @@ hbox[anonid="findbar-textbox-wrapper"]::after {
 
 .browserContainer > findbar,
 .close-icon.findbar-closebutton {
-  -moz-box-ordinal-group: 0;
+  order: -1;
 }
 
 .close-icon.findbar-closebutton,
@@ -1476,7 +1486,7 @@ list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAM
 :root[inFullscreen] #tabbrowser-tabs tab:first-of-type:last-of-type,
 :root[inFullscreen] #tabbrowser-tabs tab:first-of-type:last-of-type ~ #tabs-newtab-button,
 :root[inFullscreen] #tabbrowser-tabs tab:first-of-type:last-of-type ~ #tabbrowser-arrowscrollbox-periphery #tabs-newtab-button { 
-	display: -moz-box !important;
+	display: flex !important;
 }
 
 #placesToolbar {
@@ -2082,4 +2092,8 @@ toolbarpaletteitem[place="toolbar"] > toolbarspring {
 
 .statusBarDone {
 	margin-left: 5px;
+}
+
+.urlbarView-button-menu {
+	display: none !important;
 }
